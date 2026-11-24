@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Details</title>
+</head>
+<body>
+
+    <h1>Employee Details</h1>
+
+    <script>
+
+        function employee(name, company) {
+            console.log("Employee Name: " + name + " | Company Name: " + company + " | College Name: Sri Eshwar College of Engineering");
+        }
+
+        employee("Arun", "TCS");
+        employee("Priya", "Infosys");
+        employee("Kumar", "Wipro");
+        employee("Divya", "Google");
+
+        let data1 = function(){
+            return "Hello Javascript";
+        }
+        console.log(data1());
+
+        let data2 = function(name){
+            return "hello" + name +"this is a function without a name";
+        }
+        console.log(data2("Sundari"));
+
+        //arrow function
+
+        let mult= () =>{
+            return "arrow function";
+        }
+        console.log(mult());
+
+        let multiply = (a,b) =>{
+            return a* b;
+
+        }
+        console.log(multiply(19,5));
+
+        //callback function -> a function passed as an argument to another function
+
+        function sece(callback){
+            console.log("Welcome to sece");
+            callback();
+        }
+
+        function stud(){
+            console.log("display Students");
+        }
+
+        sece(stud);
+
+        //Whatsapp
+        //Notification
+
+        function notification(callback){
+            console.log("You have a new message");
+            callback();
+        }
+        function message(){
+            console.log("Hey Sundari, How are you?");
+        }
+        notification(message);
+        //Promise -> a promise is an object that represents the eventual completion (or failure) 
+        // of an asynchronous operation and its resulting value.
+
+        //resolve , reject fulfilled
+
+        let fetch_API = new Promise((resolve, reject) =>{
+            let API = true;
+            if(API){
+                resolve("API is working");
+            }else{
+                reject("API is not working");
+            }
+        })
+
+        //console.log(fectch_API);
+        fetch_API.then(data=>console.log(data))
+
+        let blinkit_Order = new Promise((resolve, reject) =>{
+            let Order = false;
+            if(Order){
+                resolve("Order is Placed");
+            }else{
+                setTimeout(()=>{
+                    reject("Order is not Placed");
+                }, 3000);
+                
+            }
+
+        })
+        blinkit_Order.then(data=>console.log(data))
+
+    </script>
+
+</body>
+</html>
